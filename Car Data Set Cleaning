@@ -1,0 +1,29 @@
+from platform import python_version
+
+print(python_version())
+
+import numpy as np
+import pandas as pd
+
+data = "C:\\Users\\Amar Sah\\Desktop\\jupyter code\\auto.csv"
+df=pd.read_csv(data,header=None)
+df.head()  #to check top 5 rows
+
+headers = ["symboling","normalized-losses","make","fuel-type","aspiration", "num-of-doors","body-style",
+         "drive-wheels","engine-location","wheel-base", "length","width","height","curb-weight","engine-type",
+         "num-of-cylinders", "engine-size","fuel-system","bore","stroke","compression-ratio","horsepower",
+         "peak-rpm","city-mpg","highway-mpg","price"]
+print("headers\n",headers)
+
+df.columns=headers
+headers
+df.head(10)
+
+df.tail()  #to check last 5 rows
+df.dtypes  #to check the data types of data
+
+df.describe()  #it gives the details of each column like count ,max,min
+
+df.describe(include="all")
+
+df.info()
